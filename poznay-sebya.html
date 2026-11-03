@@ -1,0 +1,298 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Познай себя</title>
+<meta name="description" content="Дневник: один вопрос в день о себе.">
+<meta property="og:title" content="Познай себя">
+<meta property="og:description" content="Дневник: один вопрос в день о себе.">
+<meta property="og:type" content="website">
+</head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* Layout: обложка-тетрадь, затем чередующиеся полосы олива / беж / бумага, как в прошлых дневниках */
+:root{
+  --olive:#454B2C; --beige:#E6D9C5; --white:#FFFFFF;
+  --paper:#FFFFFF; --paper-fg:#1E2216; --paper-mute:#6A6958; --paper-line:#CFC9B8; --paper-acc:#454B2C;
+  --serif:"Lora", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#1B1F12;--paper-fg:#F1EDE4;--paper-mute:#A3A18E;--paper-line:#3E4530;--paper-acc:#E6D9C5;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1B1F12;--paper-fg:#F1EDE4;--paper-mute:#A3A18E;--paper-line:#3E4530;--paper-acc:#E6D9C5;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--olive);font-family:var(--serif);font-size:1.0625rem;line-height:1.7;color:#FFFFFF}
+.band{background:var(--bg);color:var(--fg);padding-block:4rem}
+.in{max-width:34rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.b-olive{--bg:#454B2C;--fg:#FFFFFF;--mute:#CBC9B2;--line:#6B7250;--acc:#E6D9C5}
+.b-beige{--bg:#E6D9C5;--fg:#2F3420;--mute:#565A3E;--line:#8C8E6A;--acc:#454B2C}
+.b-paper{--bg:var(--paper);--fg:var(--paper-fg);--mute:var(--paper-mute);--line:var(--paper-line);--acc:var(--paper-acc)}
+p{margin:0 0 1rem}
+h1,h2,h3{font-style:italic;font-weight:400;margin:0;line-height:1.15;text-transform:lowercase;text-wrap:balance}
+h2{font-size:2rem;margin:0 0 .5rem}
+.mute{color:var(--mute);font-size:.95rem}
+.rule{width:3.2rem;height:2px;background:var(--acc);border:0;margin:0 0 1.8rem}
+
+/* обложка */
+.cover{background:#454B2C;padding-block:2.2rem 2.6rem}
+.book{position:relative;max-width:26rem;margin:0 auto;aspect-ratio:3/4;background:#E6D9C5;color:#2F3420;
+  box-shadow:0 1px 0 #3A3F25, 0 18px 40px rgba(0,0,0,.28);overflow:hidden;display:flex;flex-direction:column;padding:2rem 1.8rem 1.6rem 2.6rem}
+.book::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1rem;background:#454B2C;opacity:.92}
+.book::after{content:"";position:absolute;left:1rem;top:0;bottom:0;width:1px;background:#8C8E6A}
+.frame{position:absolute;inset:1rem 1rem 1rem 2rem;border:1px solid #8C8E6A;pointer-events:none}
+.ribbon{position:absolute;top:0;right:2.4rem;width:1.5rem;height:62%;background:#454B2C;clip-path:polygon(0 0,100% 0,100% 100%,50% 94%,0 100%)}
+@media (prefers-reduced-motion:no-preference){.ribbon{animation:drop 1s cubic-bezier(.2,.8,.2,1) both}@keyframes drop{from{transform:translateY(-100%)}to{transform:none}}}
+.book .top{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#565A3E;position:relative}
+.book .title{margin-top:auto;position:relative;padding-right:2.6rem}
+.book h1{font-size:clamp(2.9rem,14vw,4.4rem);line-height:.98;letter-spacing:-.02em;color:#2F3420}
+.book .sub{font-style:italic;font-size:1.1rem;margin:.9rem 0 0;color:#454B2C}
+.book .bottom{position:relative;margin-top:1.8rem;display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:#565A3E;border-top:1px solid #8C8E6A;padding-top:.7rem}
+.fields{display:flex;flex-direction:column;gap:.35rem;margin-top:1.6rem;position:relative}
+.fields span{display:flex;gap:.6rem;align-items:baseline;font-size:.85rem;color:#565A3E}
+.fields span i{flex:1;border-bottom:1px solid #8C8E6A;font-style:normal;color:#2F3420;min-height:1.2em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+/* вопрос дня */
+.lead p{font-size:1.15rem;line-height:1.55}
+.today{font-style:italic;color:var(--acc);margin-bottom:.3rem}
+.qcard .meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.95rem;color:var(--mute);margin-bottom:.6rem}
+.qcard .meta b{font-weight:400;font-style:italic;color:var(--acc)}
+.q{font-style:italic;font-size:clamp(1.6rem,6.5vw,2rem);line-height:1.25;margin:0 0 1.4rem;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.q{transition:opacity .2s}.q.fade{opacity:0}}
+textarea{width:100%;display:block;font:inherit;color:var(--fg);background:transparent;border:0;border-radius:0;resize:vertical;min-height:12rem;
+  line-height:2rem;padding:0 0 .2rem;background-image:repeating-linear-gradient(to bottom,transparent 0 calc(2rem - 1px),var(--line) calc(2rem - 1px) 2rem);caret-color:var(--acc)}
+textarea::placeholder{color:var(--mute);font-style:italic}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.btn{font:inherit;font-style:italic;cursor:pointer;padding:.85rem 1.3rem;border-radius:0;line-height:1.3;border:1px solid var(--acc);background:transparent;color:var(--fg)}
+.btn.primary{background:var(--acc);color:var(--bg)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:focus-visible,textarea:focus-visible,.chip:focus-visible,.club:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.status{margin:.8rem 0 0;font-style:italic;color:var(--mute);min-height:1.7em}
+
+/* архив */
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.chip{font:inherit;font-size:.92rem;cursor:pointer;padding:.35rem .8rem;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:999px}
+.chip[aria-pressed="true"]{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.entry{padding:1.3rem 0;border-top:1px solid var(--line)}
+.entry:last-child{border-bottom:1px solid var(--line)}
+.entry .top{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;color:var(--mute)}
+.entry h3{font-size:1.3rem;margin:.3rem 0 .5rem;text-transform:none}
+.entry p{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 .6rem}
+.del{font:inherit;font-size:.88rem;font-style:italic;background:none;border:0;padding:0;color:var(--mute);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.empty{padding:1.3rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--mute);font-style:italic;margin:0}
+.archhead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.note{font-size:.9rem;color:var(--mute);margin-top:1.4rem}
+
+.club{display:block;margin-top:1.8rem;padding:1rem 1.2rem;background:#E6D9C5;color:#1E2216;text-decoration:none;line-height:1.4}
+.club:hover{background:#FFFFFF}
+.club span{display:block;color:#454B2C;font-size:.92rem}
+.sign{margin-top:2.2rem}
+</style>
+
+<div class="cover">
+  <div class="in">
+    <div class="book" role="img" aria-label="Обложка дневника «Познай себя»">
+      <div class="frame"></div>
+      <div class="ribbon"></div>
+      <div class="top">дневник · @diaanabelle</div>
+      <div class="fields">
+        <span>владелец <i id="ownerLine"></i></span>
+        <span>начат <i id="startLine"></i></span>
+      </div>
+      <div class="title">
+        <h1>познай<br>себя</h1>
+        <p class="sub">один вопрос в день</p>
+      </div>
+      <div class="bottom"><span>30 вопросов</span><span>шесть тем</span></div>
+    </div>
+  </div>
+</div>
+
+<header class="band b-olive">
+  <div class="in lead">
+    <p class="today" id="today">сегодня</p>
+    <h2>как пользоваться</h2>
+    <hr class="rule">
+    <p>Один вопрос в день. Пиши как есть, без красивых формулировок.</p>
+    <p>Не нравится вопрос — возьми другой. Ответ сохраняется с датой и попадает в записи ниже.</p>
+  </div>
+</header>
+
+<section class="band b-paper qcard" aria-labelledby="question">
+  <div class="in">
+    <div class="meta"><b id="theme">тема</b><span id="qnum"></span></div>
+    <p class="q" id="question"></p>
+    <label class="mute" for="answer" style="display:block;margin-bottom:.4rem">мой ответ</label>
+    <textarea id="answer" placeholder="первое, что пришло в голову…"></textarea>
+    <div class="actions">
+      <button type="button" class="btn primary" id="save">сохранить запись</button>
+      <button type="button" class="btn" id="next">другой вопрос</button>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="band b-beige" aria-labelledby="archtitle">
+  <div class="in">
+    <div class="archhead">
+      <h2 id="archtitle">мои записи</h2>
+      <button type="button" class="btn" id="copy">скопировать всё</button>
+    </div>
+    <hr class="rule" style="margin-top:.8rem">
+    <div class="chips" id="filters"></div>
+    <div id="entries"></div>
+    <p class="note">Записи хранятся только в этом браузере на этом устройстве. Время от времени копируй их в заметки или «Избранное» в Telegram.</p>
+  </div>
+</section>
+
+<footer class="band b-olive">
+  <div class="in">
+    <h2>я не обязана знать себя до конца</h2>
+    <hr class="rule" style="margin-top:1rem">
+    <p>Ответы будут меняться. Это и есть смысл.</p>
+    <a class="club" href="https://t.me/booksnewnarcotics" target="_blank" rel="noopener">книжный клуб в Telegram<span>t.me/booksnewnarcotics</span></a>
+    <a class="club" style="margin-top:.8rem" href="https://t.me/diaanabelle" target="_blank" rel="noopener">diaanabelle diaries — мой личный канал<span>t.me/diaanabelle</span></a>
+    <p class="mute sign">Диана<br>@diaanabelle</p>
+  </div>
+</footer>
+
+<script>
+const Q = {
+  "желания": [
+    "Чего я хочу, но стесняюсь сказать вслух?",
+    "Что я делала бы каждый день, если бы деньги не имели значения?",
+    "Какую мечту я тихо отложила — и почему?",
+    "Чего мне сейчас не хватает больше всего: времени, тишины, внимания или чего-то другого?",
+    "Что я хочу почувствовать к концу этого года?"
+  ],
+  "страхи": [
+    "Чего я боюсь, но делаю вид, что нет?",
+    "Какое решение я откладываю из страха ошибиться?",
+    "Что самое худшее случится, если я перестану стараться всем нравиться?",
+    "Когда я в последний раз отказалась от чего-то только потому, что было страшно?",
+    "Какой страх достался мне от родителей, а не мой собственный?"
+  ],
+  "прошлое": [
+    "Какой я была в двенадцать лет — и что бы она сказала мне сейчас?",
+    "За что я до сих пор себя не простила?",
+    "Какой день из прошлого я бы прожила ещё раз?",
+    "Какую фразу из детства я до сих пор слышу у себя в голове?",
+    "Что я однажды бросила и иногда жалею?"
+  ],
+  "люди": [
+    "Рядом с кем я становлюсь лучше — а рядом с кем меньше?",
+    "Кому я давно хочу что-то сказать, но молчу?",
+    "Чьё одобрение мне до сих пор важно больше, чем хотелось бы?",
+    "Какую границу мне пора поставить?",
+    "Чьего звонка я на самом деле жду?"
+  ],
+  "тело": [
+    "Где в теле я сейчас чувствую напряжение — и с чем оно связано?",
+    "Когда я в последний раз отдыхала, не чувствуя вины?",
+    "Что моё тело просит уже давно, а я не слышу?",
+    "В какой момент дня я чувствую себя живее всего?",
+    "Что я говорю своему отражению — и сказала бы я это подруге?"
+  ],
+  "я сейчас": [
+    "Какие три слова описывают меня сегодня?",
+    "Что я делаю по привычке, хотя давно не хочу?",
+    "Чем я горжусь, но никому об этом не говорю?",
+    "Какую роль я играю чаще всего — и устала ли от неё?",
+    "Что я знаю о себе точно, без сомнений?"
+  ]
+};
+const ALL = Object.entries(Q).flatMap(([t, qs]) => qs.map(q => ({t, q})));
+const KEY = "poznai-sebya-v1", DRAFT = "poznai-sebya-draft";
+const $ = id => document.getElementById(id);
+function get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+function set(k,v){ try { localStorage.setItem(k,v); return true; } catch(e){ return false; } }
+function del(k){ try { localStorage.removeItem(k); } catch(e){} }
+let entries = []; try { entries = JSON.parse(get(KEY)) || []; } catch(e){}
+let filter = "все";
+
+const now = new Date();
+const fmt = d => new Date(d).toLocaleDateString("ru-RU", {day:"numeric", month:"long", year:"numeric"});
+$("today").textContent = now.toLocaleDateString("ru-RU", {weekday:"long", day:"numeric", month:"long"});
+
+const dayIndex = Math.floor((now - new Date(now.getFullYear(),0,0)) / 864e5);
+let idx = dayIndex % ALL.length;
+function paintQ(){
+  $("question").textContent = ALL[idx].q;
+  $("theme").textContent = ALL[idx].t;
+  $("qnum").textContent = `вопрос ${idx + 1} из ${ALL.length}`;
+}
+paintQ();
+
+const d = get(DRAFT); if (d) $("answer").value = d;
+$("answer").addEventListener("input", e => set(DRAFT, e.target.value));
+
+$("next").addEventListener("click", () => {
+  idx = (idx + 1 + Math.floor(Math.random() * (ALL.length - 1))) % ALL.length;
+  const el = $("question"); el.classList.add("fade");
+  setTimeout(() => { paintQ(); el.classList.remove("fade"); }, 150);
+  $("status").textContent = "";
+});
+
+$("save").addEventListener("click", () => {
+  const text = $("answer").value.trim();
+  if (!text) { $("status").textContent = "Сначала напиши хоть пару строк."; return; }
+  entries.unshift({id: Date.now(), date: new Date().toISOString(), t: ALL[idx].t, q: ALL[idx].q, a: text});
+  const ok = set(KEY, JSON.stringify(entries));
+  $("answer").value = ""; del(DRAFT);
+  $("status").textContent = ok ? "Записано." : "Записано только до закрытия страницы: браузер не даёт сохранять.";
+  render();
+});
+
+function paintCover(){
+  const first = entries.length ? entries[entries.length - 1].date : null;
+  $("startLine").textContent = first ? fmt(first) : "";
+  $("ownerLine").textContent = "";
+}
+
+function render(){
+  const f = $("filters"); f.innerHTML = "";
+  ["все", ...Object.keys(Q)].forEach(t => {
+    const n = t === "все" ? entries.length : entries.filter(e => e.t === t).length;
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip";
+    b.textContent = n ? `${t} · ${n}` : t;
+    b.setAttribute("aria-pressed", t === filter);
+    b.onclick = () => { filter = t; render(); };
+    f.appendChild(b);
+  });
+  const list = filter === "все" ? entries : entries.filter(e => e.t === filter);
+  const box = $("entries"); box.innerHTML = "";
+  $("copy").disabled = !entries.length;
+  if (!list.length){
+    const p = document.createElement("p"); p.className = "empty";
+    p.textContent = entries.length ? "В этой теме пока нет записей." : "Пока пусто. Ответь на вопрос выше и нажми «сохранить запись».";
+    box.appendChild(p);
+  } else list.forEach(e => {
+    const a = document.createElement("article"); a.className = "entry";
+    a.innerHTML = '<div class="top"><span></span><span></span></div><h3></h3><p></p>';
+    a.querySelector(".top span:first-child").textContent = fmt(e.date);
+    a.querySelector(".top span:last-child").textContent = e.t;
+    a.querySelector("h3").textContent = e.q;
+    a.querySelector("p").textContent = e.a;
+    const b = document.createElement("button"); b.type = "button"; b.className = "del"; b.textContent = "удалить";
+    b.onclick = () => {
+      if (b.dataset.armed){ entries = entries.filter(x => x.id !== e.id); set(KEY, JSON.stringify(entries)); render(); }
+      else { b.dataset.armed = "1"; b.textContent = "точно удалить?"; }
+    };
+    a.appendChild(b); box.appendChild(a);
+  });
+  paintCover();
+}
+
+$("copy").addEventListener("click", async () => {
+  const text = "Познай себя\n\n" + entries.map(e => `${fmt(e.date)} · ${e.t}\n${e.q}\n${e.a}`).join("\n\n———\n\n");
+  const btn = $("copy");
+  try { await navigator.clipboard.writeText(text); btn.textContent = "скопировано"; }
+  catch(err){
+    const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); btn.textContent = "скопировано"; } catch(_) { btn.textContent = "не вышло"; }
+    ta.remove();
+  }
+  setTimeout(() => btn.textContent = "скопировать всё", 2000);
+});
+
+render();
+</script>
+
+</body></html>
