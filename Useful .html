@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>diaanabelle — материалы</title>
+<meta name="description" content="Дневники и материалы от @diaanabelle: про книги, чтение и себя.">
+<meta property="og:title" content="diaanabelle — материалы">
+<meta property="og:description" content="Дневники и материалы от @diaanabelle: про книги, чтение и себя.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--olive:#454B2C;--beige:#E6D9C5;--ink:#2F3420;--mute:#565A3E;--line:#8C8E6A;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--olive);color:#fff;font-family:"Lora",Georgia,"Times New Roman",serif;font-size:1.0625rem;line-height:1.7}
+.in{max-width:34rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-style:italic;font-weight:400;line-height:1.1;margin:0;text-transform:lowercase;text-wrap:balance}
+.hero{position:relative;overflow:hidden;padding:6.5rem 0 3.5rem}
+.mark{position:absolute;top:0;right:max(1.6rem,env(safe-area-inset-right,0px));width:2.7rem;height:6.2rem;background:var(--beige);clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%)}
+@media (prefers-reduced-motion:no-preference){.mark{animation:drop .9s cubic-bezier(.2,.8,.2,1) both}@keyframes drop{from{transform:translateY(-100%)}to{transform:none}}}
+.top{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#CBC9B2;margin:0 0 1.2rem}
+h1{font-size:clamp(2.8rem,13vw,4.2rem);letter-spacing:-.015em;margin-bottom:1.4rem}
+.rule{width:3.2rem;height:2px;background:var(--beige);border:0;margin:0 0 1.6rem}
+.lead{font-size:1.15rem;line-height:1.55;margin:0 0 .5rem}
+.list{background:var(--beige);color:var(--ink);padding:3rem 0 3.5rem}
+.list h2{font-size:2rem;margin-bottom:.5rem}
+.list .rule{background:var(--olive)}
+.item{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:.6rem;padding:1.5rem 0;border-top:1px solid var(--line);color:inherit;text-decoration:none}
+.item:last-of-type{border-bottom:1px solid var(--line)}
+.n{font-style:italic;font-size:2.2rem;line-height:1;color:var(--olive)}
+.item h3{font-style:italic;font-weight:400;font-size:1.45rem;line-height:1.2;margin:0 0 .35rem;text-transform:lowercase}
+.item p{margin:0;color:var(--mute);font-size:.98rem;line-height:1.5}
+.go{display:inline-block;margin-top:.6rem;font-style:italic;color:var(--olive);border-bottom:1px solid currentColor;line-height:1.3}
+.item:hover h3,.item:focus-visible h3{text-decoration:underline;text-underline-offset:4px}
+.item:focus-visible,.club:focus-visible{outline:2px solid var(--olive);outline-offset:4px}
+footer{padding:3.5rem 0 4rem}
+footer h2{font-size:1.9rem;margin-bottom:1rem}
+.club{display:block;margin-top:.8rem;padding:1rem 1.2rem;background:var(--beige);color:#1E2216;text-decoration:none;line-height:1.4}
+.club:hover{background:#fff}
+.club span{display:block;color:var(--olive);font-size:.92rem}
+.sign{margin-top:2.2rem;color:#CBC9B2;font-size:.95rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="mark" aria-hidden="true"></div>
+  <div class="in">
+    <p class="top">@diaanabelle</p>
+    <h1>мои материалы</h1>
+    <hr class="rule">
+    <p class="lead">Дневники и рабочие листы, которые я делаю для себя и для клуба.</p>
+    <p class="lead">Ответы хранятся только у тебя в браузере. Я их не вижу.</p>
+  </div>
+</header>
+
+<main class="list">
+  <div class="in">
+    <h2>что здесь есть</h2>
+    <hr class="rule">
+
+    <a class="item" href="poznanie">
+      <span class="n" aria-hidden="true">1</span>
+      <div>
+        <h3>дневник познания</h3>
+        <p>Сорок вопросов о том, во что я верю, что для меня важно и как я смотрю на мир.</p>
+        <span class="go">открыть</span>
+      </div>
+    </a>
+
+    <a class="item" href="poznay-sebya">
+      <span class="n" aria-hidden="true">2</span>
+      <div>
+        <h3>познай себя</h3>
+        <p>Один вопрос в день. Шесть тем: желания, страхи, прошлое, люди, тело, я сейчас.</p>
+        <span class="go">открыть</span>
+      </div>
+    </a>
+
+    <a class="item" href="chitatel">
+      <span class="n" aria-hidden="true">3</span>
+      <div>
+        <h3>дневник умного читателя</h3>
+        <p>Рабочий лист для одной книги. Чтобы прочитанное не исчезало через неделю.</p>
+        <span class="go">открыть</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="in">
+    <h2>где я ещё есть</h2>
+    <a class="club" href="https://t.me/booksnewnarcotics" target="_blank" rel="noopener">книжный клуб в Telegram<span>t.me/booksnewnarcotics</span></a>
+    <a class="club" href="https://t.me/diaanabelle" target="_blank" rel="noopener">diaanabelle diaries — мой личный канал<span>t.me/diaanabelle</span></a>
+    <p class="sign">Диана · @diaanabelle</p>
+  </div>
+</footer>
+
+</body>
+</html>
